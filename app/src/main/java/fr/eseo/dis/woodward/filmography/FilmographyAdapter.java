@@ -52,34 +52,12 @@ public class FilmographyAdapter extends
     holder.filmGenre.setText(film.getGenre());
     holder.filmAnnee.setText(String.valueOf(film.getAnnee()));
     holder.filmResume.setText(film.getResume());
-    if (positionsExpanded.contains(position)) {
-      holder.filmResume.setVisibility(View.VISIBLE);
-    } else {
-      holder.filmResume.setVisibility(View.GONE);
-    }
+
     holder.view.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         Log.d("FilmographyAdapter","Item 'clicked'");
         activity.clickItem(film);
-      }
-    });
-    holder.view.setOnLongClickListener(new View.OnLongClickListener() {
-      @Override
-      public boolean onLongClick(View v) {
-        Log.d("FilmographyAdapter","Item 'long clicked'");
-        TextView resume = (TextView) v.findViewById(R.id.tv_film_resume);
-        TextView resumeLabel = (TextView) v.findViewById(R.id.tv_film_resume_label);
-        if (positionsExpanded.contains(position)) {
-          resume.setVisibility(View.GONE);
-          resumeLabel.setVisibility(View.GONE);
-          positionsExpanded.remove(new Integer(position));
-        } else {
-          resume.setVisibility(View.VISIBLE);
-          resumeLabel.setVisibility(View.VISIBLE);
-          positionsExpanded.add(position);
-        }
-        return true;
       }
     });
   }

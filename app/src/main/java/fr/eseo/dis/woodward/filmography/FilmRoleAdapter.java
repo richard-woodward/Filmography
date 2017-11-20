@@ -15,7 +15,7 @@ import java.util.List;
  * Created by rwoodward on 16/11/17.
  */
 
-class FilmRoleAdapter extends RecyclerView.Adapter<FilmRoleAdapter.ActeurViewHolder> {
+public class FilmRoleAdapter extends RecyclerView.Adapter<FilmRoleAdapter.ActeurViewHolder> {
 
 
   private final Context context;
